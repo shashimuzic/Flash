@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+            <!-- Write your valid userame exists in records -->
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" required />
+            </div>
+            <!-- Write your valid password -->
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" required />
+            </div>
+            <!-- Click to Sign In -->
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #34495e;
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+label {
+color: #ecf0f1;
+}
+
+.form-control { 
+    background: #ecf0f1;
+}
+.btn-primary {
+    width: 100%; margin-top: 15px;
+}
