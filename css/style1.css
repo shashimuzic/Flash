@@ -27,18 +27,18 @@ p{
 .form-control {
     background-color: hsl(198, 20%, 10%) !important;  /* inside color */
     color: white !important;                          /* text color */
-    border: 2px solid hsl(198, 20%, 10%) !important;               /* border thickness */
+    border: 2px solid hsl(198, 20%, 10%) !important;  /* border thickness */
     border-radius: 10px;
 }
-/* Placeholder ka color */
+/* Placeholder color */
 .form-control::placeholder {
     color: #cccccc;
 }
-/* Focus par blue border hatao */
+/* remove blue border on focus */
 .form-control:focus {
     background-color: hsl(198, 20%, 10%) !important;
     color: white !important;
-    border-color: #f1c40f !important;   /* focus par yellow */
+    border-color: #f1c40f !important;   /* On focus yellow */
     box-shadow: none !important;
     outline: none !important;
     }
