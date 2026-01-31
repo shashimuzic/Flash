@@ -1,0 +1,87 @@
+body {
+  background: hsl(198, 20%, 10%);
+  padding: 10px;
+  color: #fff;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.table-box {
+  background: #1c2c39;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+/* Buttons */
+.file-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+
+/* Upload box */
+.upload-box {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.logout-btn {
+  float: right;
+  margin-bottom: 10px;
+}
+
+/* Table responsiveness */
+.table {
+  width: 100%;
+  font-size: 14px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Table coloring */
+thead tr th:nth-of-type(1n) {
+  background-color: rgb(10, 85, 92);
+  border-bottom: 2px solid rgb(17, 255, 215);
+}   
+
+tbody > tr > td:nth-child(3) {
+  color: rgb(47, 255, 0);
+}
+
+.btn-sm {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+}
+
+/* 📱 Mobile specific */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  .file-actions {
+    flex-direction: column;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    display: none; /* hide checkbox column on phone */
+  }
+}
