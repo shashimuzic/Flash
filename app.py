@@ -26,3 +26,16 @@ def login_required(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated
+
+# formatting file size numbers into human readable form
+def sizeof_fmt(num, suffix="B"):
+    for unit in ["", "K", "M", "G", "T"]:
+        if abs(num) < 1024.0:
+            return f"{num:3.1f}{unit}{suffix}"
+        num /= 1024.0
+    return f"{num:.1f}P{suffix}"
+
+# Setting route of Dashboard Page after verification. 
+@app.route("/", methods=["GET"])
+def index():
+    return redirect("/dashboard")
