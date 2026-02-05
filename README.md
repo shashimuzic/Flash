@@ -1,6 +1,6 @@
 <h2> Welcome to Wireless Project</h2>
 
-<h1 align="Centre">⚡Flash⚡</h1>
+<h1 align="center">⚡Flash⚡</h1>
 
 # ⚡ Flash – Wireless Data Sharing App
 
