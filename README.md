@@ -1,4 +1,4 @@
-<h2> Welcome to Wireless Project</h2>
+<h2 align="center"> Welcome to Wireless Project</h2>
 
 <h1 align="center">⚡Flash⚡</h1>
 
