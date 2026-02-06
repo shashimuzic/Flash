@@ -39,3 +39,15 @@ def sizeof_fmt(num, suffix="B"):
 @app.route("/", methods=["GET"])
 def index():
     return redirect("/dashboard")
+
+# Verification & Redirected to Dashboard Page.
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        if request.form["username"] == USERNAME and request.form["password"] == PASSWORD:
+            session["logged_in"] = True
+            return redirect(url_for("dashboard"))
+        else:
+            return "Invalid credentials"
+    from flask import render_template
+    return render_template("login.html")
