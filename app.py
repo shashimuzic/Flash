@@ -51,3 +51,12 @@ def login():
             return "Invalid credentials"
     from flask import render_template
     return render_template("login.html")
+
+# After Logout message will be shown.
+@app.route("/logout")
+def logout():
+    session.clear()
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func:
+        func()
+    return "Server shutting down..."
