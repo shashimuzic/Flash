@@ -13,7 +13,7 @@ Just open the browser and start sharing instantly.
 
 ## 🚀 Key Features
 
-✅ High-speed wireless file transfer (up to **88 MB/s** on local network)
+✅ High-speed wireless file transfer (up to **105 MB/s** on local network)
 
 ✅ Simple browser-based access (works on PC, phone, tablet)
 
