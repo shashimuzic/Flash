@@ -60,3 +60,34 @@ def logout():
     if func:
         func()
     return "Server shutting down..."
+
+# Giving access to the file manager after verification. 
+@app.route("/dashboard", defaults={'req_path': ''})
+@app.route("/dashboard/<path:req_path>")
+@login_required
+def dashboard(req_path):
+    abs_path = os.path.join(BASE_DIR, req_path)
+    if not os.path.exists(abs_path):
+        return abort(404)
+
+    if os.path.isfile(abs_path):
+        return send_from_directory(os.path.dirname(abs_path), os.path.basename(abs_path))
+
+    files = []
+    folders = []
+    for item in os.listdir(abs_path):
+        full_path = os.path.join(abs_path, item)
+        if os.path.isdir(full_path):
+            folders.append(item)
+        else:
+            size = os.path.getsize(full_path)
+            files.append({
+                "name": item,
+                "size": size,
+                "size_str": sizeof_fmt(size),
+            })
+
+    rel_path = os.path.relpath(abs_path, BASE_DIR)
+    rel_path = "" if rel_path == "." else rel_path + "/"
+
+    return render_template("dashboard.html",files=files,folders=folders,rel_path=rel_path)
