@@ -36,3 +36,15 @@ Just open the browser and start sharing instantly.
 ✅ Clean modern dashboard UI
 
 ---
+
+## 📂 What You Can Do
+
+- Upload files to the host machine
+- Download files to any device
+- Preview images/videos/docs under 100 MB
+- Delete unwanted files remotely
+- Browse full directory structure
+- Share large files wirelessly
+- Access from any device on same network
+
+---
