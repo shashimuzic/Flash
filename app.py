@@ -91,3 +91,18 @@ def dashboard(req_path):
     rel_path = "" if rel_path == "." else rel_path + "/"
 
     return render_template("dashboard.html",files=files,folders=folders,rel_path=rel_path)
+
+# For sending (there is upload option) we will choose the file and upload them.
+@app.route("/upload", methods=["POST"])
+@login_required
+def upload():
+    if 'file' not in request.files:
+        return "No file uploaded", 400
+    files = request.files.getlist('file')
+    for file in files:
+        if file:
+            filename = secure_filename(file.filename)
+            dest_path = os.path.join(DEFAULT_DIR, filename)
+            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+            file.save(dest_path)
+    return redirect(url_for("dashboard"))
