@@ -48,3 +48,14 @@ Just open the browser and start sharing instantly.
 - Access from any device on same network
 
 ---
+
+## ⚡ Performance
+
+Flash runs entirely on your local network, allowing very fast transfer speeds.
+
+Typical speed: 88mbps
+
+
+No internet required.
+
+---
