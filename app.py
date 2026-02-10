@@ -106,3 +106,23 @@ def upload():
             os.makedirs(os.path.dirname(dest_path), exist_ok=True)
             file.save(dest_path)
     return redirect(url_for("dashboard"))
+
+# Setting route of downloaded file
+@app.route("/download/<path:filename>")
+@login_required
+def download(filename):
+    file_path = os.path.join(BASE_DIR, filename)
+
+    if os.path.isdir(file_path):
+        zip_path = file_path + ".zip"
+        shutil.make_archive(file_path, 'zip', file_path)
+
+        def generate():
+            with open(zip_path, 'rb') as f:
+                yield from f
+            os.remove(zip_path)  # Auto-delete after download
+
+        return app.response_class(generate(), mimetype='application/zip',
+            headers={"Content-Disposition": f"attachment;filename={os.path.basename(zip_path)}"})
+
+    return send_from_directory(os.path.dirname(file_path), os.path.basename(file_path), as_attachment=True)
