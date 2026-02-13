@@ -59,3 +59,64 @@ Typical speed: 88mbps
 No internet required.
 
 ---
+
+## 🖥 How It Works
+
+1. Start the server on your computer.
+2. A local IP link and QR code are generated.
+3. Open the link on any device connected to the same Wi-Fi.
+4. Login and start sharing files instantly.
+
+---
+
+## 📦 Installation
+
+Clone repository:
+
+```bash
+git clone https://github.com/yourusername/flash.git
+cd flash
+
+
+## Install_dependencies
+
+    pip install -r requirements.txt
+    python app.py
+
+    Username: SK2121   (You Can use your own user id and Password)
+    Password: 2121
+
+## 🛠 Tech Stack
+
+- Python  
+- Flask  
+- HTML  
+- CSS  
+- JavaScript  
+- Bootstrap  
+
+## 📌 Future Improvements
+
+- Drag & drop upload
+- Multi-file ZIP download
+- Upload progress bar
+- Dark / Light theme switch
+- Resume downloads
+- User management system
+
+## ⭐ Why Flash?
+
+Flash focuses on **speed**, **simplicity**, and **offline sharing** without needing cloud storage.
+
+Perfect for:
+
+- Large file transfer
+- Classroom sharing
+- Office environments
+- Personal file management
+- LAN file sharing
+
+
+## 📜 License
+
+- Open-source project for learning and personal use.
