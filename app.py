@@ -126,3 +126,24 @@ def download(filename):
             headers={"Content-Disposition": f"attachment;filename={os.path.basename(zip_path)}"})
 
     return send_from_directory(os.path.dirname(file_path), os.path.basename(file_path), as_attachment=True)
+
+
+@app.route("/view/<path:filename>")
+@login_required
+def view_file(filename):
+    file_path = os.path.join(BASE_DIR, filename)
+    if os.path.exists(file_path) and os.path.getsize(file_path) < MAX_PREVIEW_SIZE:
+        mime_type, _ = mimetypes.guess_type(file_path)
+        return send_file(file_path, mimetype=mime_type)
+    return "File too large to preview or doesn't exist."
+
+@app.route("/delete/<path:filename>")
+@login_required
+def delete_file(filename):
+    file_path = os.path.join(BASE_DIR, filename)
+    if os.path.exists(file_path):
+        if os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+        else:
+            os.remove(file_path)
+    return redirect(url_for("dashboard"))
