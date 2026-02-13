@@ -147,3 +147,23 @@ def delete_file(filename):
         else:
             os.remove(file_path)
     return redirect(url_for("dashboard"))
+
+
+if __name__ == "__main__":
+    # Detect local IP
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+    finally:
+        s.close()
+
+    url = f"http://{ip}:2121"
+
+    # Generate QR code image
+    img = qrcode.make(url)
+    img.show()  # This will pop up the QR code in default viewer
+
+    print(f"\n📡 Shareable Link: {url}\n")
+    print("Scan the QR code to access the file manager.\n")
+    app.run(host="0.0.0.0", port=2121)   # you can change the port here.
